@@ -1,0 +1,235 @@
+#mainHeader {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f9f6d3;
+}
+
+#mainHeader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: #ff9a9e;
+  border-radius: 90% 50% 0 50%;
+}
+
+#mainHeader::before {
+  content: "";
+  position: absolute;
+  top: -170px;
+  left: -150px;
+  width: 192px;
+  height: 250px;
+  border-radius: 30px 50px 0 0;
+  background: #ff9a9e;
+  transform: rotate(45deg);
+  transform-origin: 0 100%;
+}
+
+#heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  width: 800px;
+  height: 720px;
+}
+
+#heart::before,
+#heart::after {
+  content: "";
+  position: absolute;
+  width: 416px;
+  height: 630px;
+  background: #ff9a9d;
+}
+
+#heart::before {
+  left: 400px;
+  top: 0px;
+  border-radius: 200px 200px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0px;
+  top: 0px;
+  border-radius: 200px 200px 0 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+#mainImage {
+  position: absolute;
+  right: -90px;
+  top: -10%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  #heart {
+    width: 400px;
+    height: 360px;
+  }
+
+  #heart::before,
+  #heart::after {
+    width: 208px;
+    height: 315px;
+  }
+
+  #heart::before {
+    left: 200px;
+  }
+
+  #mainImage {
+    right: -45px;
+    top: -5%;
+  }
+}
+
+@media (max-width: 480px) {
+  #heart {
+    width: 200px;
+    height: 180px;
+  }
+
+  #heart::before,
+  #heart::after {
+    width: 104px;
+    height: 157.5px;
+  }
+
+  #heart::before {
+    left: 100px;
+  }
+
+  #mainImage {
+    right: -20px;
+    top: -2%;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  margin: 0%;
+  padding: 0%;
+  right: 100%;
+}
+.mainText,
+.mainTextSub {
+  margin: 0%;
+  padding: 0%;
+  display: block;
+  right: 100%;
+  color: #000;
+  position: relative;
+  z-index: 3;
+  font-size: 60px;
+}
+.mainTextH1 {
+  margin: 0%;
+  padding: 0%;
+  display: block;
+  right: 100%;
+  color: #000;
+  position: relative;
+  z-index: 3;
+  font-size: 150px;
+}
+@media only screen and (max-width: 600px) {
+  .mainText,
+  .mainTextSub {
+    color: #000;
+    font-size: 30px;
+  }
+  .mainTextH1 {
+    color: #000;
+    font-size: 75px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+    right: 100%;
+  }
+  .mainText,
+  .mainTextSub {
+    font-size: 20px;
+  }
+  .mainTextH1 {
+    font-size: 50px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#mainImage {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.mainText,
+.mainTextSub,
+.mainTextH1 {
+  animation: slideIn 2s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+#navigateButtonContainer {
+  position: fixed;
+  right: 60%;
+  bottom: 10%;
+}
+
+#navigateButton {
+  background-color: #f7231f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}

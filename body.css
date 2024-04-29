@@ -1,0 +1,95 @@
+#bodyHeader {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff266;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.5s ease-in-out;
+}
+
+#bodyHeader::before,
+#bodyHeader::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 40%;
+  width: 400px; /* Adjust as needed */
+  height: 480px; /* Adjust as needed */
+  background: rgb(249, 173, 173);
+  border-radius: 90px 90px 0 0;
+  transform: rotate(45deg);
+  transform-origin: 0 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+#bodyHeader::before {
+  transform: rotate(-45deg);
+  transform-origin: 100% 100%;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 4s ease-in forwards;
+  position: relative;
+  z-index: 1;
+  margin: 20px;
+}
+
+.image-text img {
+  width: 400px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+}
+
+.image-text p {
+  font-size: 20px; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+}
+
+.image-text:nth-child(1) {
+  animation: fadeIn 4s ease-in forwards;
+}
+
+.image-text:nth-child(2) {
+  animation: fadeIn 4s ease-in 1s forwards;
+}
+
+.image-text:nth-child(3) {
+  animation: fadeIn 4s ease-in 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#navigateButtonContainer {
+  position: fixed;
+  right: 50%;
+  bottom: 10%;
+}
+
+#navigateButton {
+  background-color: #f7231f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
